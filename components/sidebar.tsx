@@ -29,18 +29,16 @@ const navSections: NavSection[] = [
     ],
   },
   {
-    title: "API Reference",
+    title: "Development",
     items: [
-      { label: "ERC20 API", href: "/api/erc20" },
-      { label: "ERC721 API", href: "/api/erc721" },
-      { label: "Ownable API", href: "/api/ownable" },
+      { label: "Local Development", href: "/development" },
+      { label: "Testing & Examples", href: "/resources/examples" },
     ],
   },
   {
     title: "Resources",
     items: [
       { label: "Best Practices", href: "/resources/best-practices" },
-      { label: "Examples", href: "/resources/examples" },
       { label: "FAQ", href: "/resources/faq" },
     ],
   },

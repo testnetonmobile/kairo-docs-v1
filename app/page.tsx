@@ -1,49 +1,34 @@
 "use client"
 
 import { LayoutWrapper } from "@/components/layout-wrapper"
-import { CodeBlock } from "@/components/code-block"
-import { ArrowRight, Zap, Shield, Boxes } from "lucide-react"
+import { ArrowRight, AlertCircle, Zap, Package } from "lucide-react"
 import Link from "next/link"
 
 export default function Home() {
-  const erc20Example = `use stylus_sdk::prelude::*;
-use crate::erc20::{Erc20, ERC20_TRANSFER};
-
-#[solidity_interface]
-pub trait Token {
-    fn transfer(&mut self, to: Address, value: U256) -> bool;
-}
-
-#[entrypoint]
-pub fn main() {
-    let mut token = Erc20::new();
-    // Your logic here
-}`
-
   return (
     <LayoutWrapper>
       <div className="max-w-4xl mx-auto px-4 md:px-8 py-12">
         {/* Hero Section */}
         <div className="mb-20 text-center">
           <div className="inline-block mb-4 px-4 py-2 rounded-full bg-primary/10 border border-primary/20">
-            <p className="text-sm font-medium text-primary">Welcome to Kairo</p>
+            <p className="text-sm font-medium text-primary">Smart Contracts for Stylus</p>
           </div>
           <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
-            Secure Smart Contracts for <span className="text-primary">Arbitrum Stylus</span>
+            Kairo: A Stylus <span className="text-primary">Smart Contract Library</span>
           </h1>
           <p className="text-xl text-muted-foreground mb-8 text-balance max-w-2xl mx-auto">
-            A foundational library of battle-tested smart contracts written natively in Rust. Build high-performance
-            dApps with confidence.
+            Production-ready smart contracts written natively in Rust for Arbitrum Stylus. Secure, gas-efficient, and
+            inspired by OpenZeppelin.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
               href="/quick-start"
-              className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary-dark transition-colors flex items-center justify-center gap-2"
+              className="px-8 py-3 rounded-lg bg-primary text-primary-foreground font-medium hover:bg-primary/90 transition-colors flex items-center justify-center gap-2"
             >
               Get Started <ArrowRight size={18} />
             </Link>
             <a
-              href="https://github.com/arbitrum/stylus"
+              href="https://github.com/Team-Oracle/kairo"
               target="_blank"
               rel="noopener noreferrer"
               className="px-8 py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary/10 transition-colors"
@@ -53,78 +38,104 @@ pub fn main() {
           </div>
         </div>
 
-        {/* Features Grid */}
+        {/* The Problem */}
+        <div className="bg-card border border-border rounded-2xl p-8 md:p-12 mb-20">
+          <div className="flex gap-4 items-start">
+            <AlertCircle className="text-primary flex-shrink-0 mt-1" size={24} />
+            <div>
+              <h2 className="text-2xl font-bold mb-4">The Problem</h2>
+              <p className="text-muted-foreground mb-4">
+                Arbitrum Stylus is revolutionary—it lets developers write smart contracts in high-performance languages
+                like Rust. But this new ecosystem faces a critical challenge: the "blank page" problem.
+              </p>
+              <p className="text-muted-foreground">
+                Without a standard library, every developer must write their own ERC20 or NFT contracts from scratch.
+                This is slow and a leading cause of security vulnerabilities.{" "}
+                <strong>
+                  Kairo solves this by providing a foundational, trusted, and battle-tested set of contracts.
+                </strong>
+              </p>
+            </div>
+          </div>
+        </div>
+
+        {/* Features */}
         <div className="grid md:grid-cols-3 gap-6 mb-20">
           <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
-            <Shield className="mb-4 text-primary" size={28} />
-            <h3 className="font-bold text-lg mb-2">Battle-Tested Security</h3>
+            <Package className="mb-4 text-primary" size={28} />
+            <h3 className="font-bold text-lg mb-2">ERC20 & ERC721</h3>
             <p className="text-muted-foreground">
-              Audited implementations of ERC20, ERC721, and access control standards built for the Stylus runtime.
+              Full-featured implementations of fungible tokens and NFTs, ready to extend and customize.
             </p>
           </div>
           <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
             <Zap className="mb-4 text-primary" size={28} />
             <h3 className="font-bold text-lg mb-2">Lightning Fast</h3>
             <p className="text-muted-foreground">
-              Rust-based contracts are 10-100x faster than Solidity, with significantly lower gas costs.
+              Written in Rust for Stylus VM. Dramatically faster execution and lower gas costs than Solidity.
             </p>
           </div>
           <div className="p-6 rounded-xl border border-border bg-card hover:border-primary/50 transition-colors">
-            <Boxes className="mb-4 text-primary" size={28} />
-            <h3 className="font-bold text-lg mb-2">Easy Integration</h3>
+            <AlertCircle className="mb-4 text-primary" size={28} />
+            <h3 className="font-bold text-lg mb-2">Secure & Audited</h3>
             <p className="text-muted-foreground">
-              Drop in as a dependency. Import, extend, and deploy. No reinventing the wheel.
+              Production-ready contracts inspired by OpenZeppelin, designed for safety and reliability.
             </p>
           </div>
         </div>
 
-        {/* Code Example */}
+        {/* Quick Navigation */}
         <div className="mb-20">
-          <h2 className="text-3xl font-bold mb-4">Get Started in Minutes</h2>
-          <p className="text-muted-foreground mb-6">
-            Kairo makes it simple to build secure contracts. Here's a basic example:
-          </p>
-          <CodeBlock code={erc20Example} language="rust" filename="src/lib.rs" />
-        </div>
-
-        {/* Core Standards */}
-        <div className="mb-20">
-          <h2 className="text-3xl font-bold mb-8">Core Standards</h2>
-          <div className="grid md:grid-cols-3 gap-6">
+          <h2 className="text-3xl font-bold mb-8">Get Started</h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <Link
+              href="/quick-start"
+              className="p-6 rounded-xl border border-border hover:border-primary transition-all hover:shadow-md group"
+            >
+              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Quick Start Guide</div>
+              <p className="text-muted-foreground text-sm mb-4">
+                Learn how to install Kairo and deploy your first token in minutes.
+              </p>
+              <div className="text-primary font-medium flex items-center gap-2 text-sm">
+                Read guide <ArrowRight size={14} />
+              </div>
+            </Link>
             <Link
               href="/guides/erc20"
               className="p-6 rounded-xl border border-border hover:border-primary transition-all hover:shadow-md group"
             >
-              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">ERC20 Tokens</div>
-              <p className="text-muted-foreground mb-4">
-                Fungible token implementation with transfer, approve, and balance tracking.
+              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">ERC20 Example</div>
+              <p className="text-muted-foreground text-sm mb-4">
+                Deep dive into building custom ERC20 tokens with Kairo.
               </p>
-              <div className="text-primary font-medium flex items-center gap-2">
-                Learn more <ArrowRight size={16} />
+              <div className="text-primary font-medium flex items-center gap-2 text-sm">
+                Explore <ArrowRight size={14} />
               </div>
             </Link>
             <Link
-              href="/guides/erc721"
+              href="/development"
               className="p-6 rounded-xl border border-border hover:border-primary transition-all hover:shadow-md group"
             >
-              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">ERC721 NFTs</div>
-              <p className="text-muted-foreground mb-4">
-                Non-fungible token standard for unique digital assets and collectibles.
+              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Local Development</div>
+              <p className="text-muted-foreground text-sm mb-4">
+                Set up a local node and run the Kairo test suite for development.
               </p>
-              <div className="text-primary font-medium flex items-center gap-2">
-                Learn more <ArrowRight size={16} />
+              <div className="text-primary font-medium flex items-center gap-2 text-sm">
+                Learn more <ArrowRight size={14} />
               </div>
             </Link>
             <Link
-              href="/guides/access-control"
+              href="/resources/examples"
               className="p-6 rounded-xl border border-border hover:border-primary transition-all hover:shadow-md group"
             >
-              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">Access Control</div>
-              <p className="text-muted-foreground mb-4">
-                Role-based permission system to manage contract ownership and operator roles.
+              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
+                Examples & Recipes
+              </div>
+              <p className="text-muted-foreground text-sm mb-4">
+                Pre-built examples and common patterns for using Kairo.
               </p>
-              <div className="text-primary font-medium flex items-center gap-2">
-                Learn more <ArrowRight size={16} />
+              <div className="text-primary font-medium flex items-center gap-2 text-sm">
+                View examples <ArrowRight size={14} />
               </div>
             </Link>
           </div>
@@ -141,7 +152,7 @@ pub fn main() {
               <div>
                 <h3 className="font-bold mb-1">Write in Rust, C, or C++</h3>
                 <p className="text-muted-foreground">
-                  Move beyond Solidity to languages with superior performance and safety.
+                  High-performance languages with superior safety and speed compared to Solidity.
                 </p>
               </div>
             </div>
@@ -150,8 +161,10 @@ pub fn main() {
                 2
               </div>
               <div>
-                <h3 className="font-bold mb-1">10-100x Faster Execution</h3>
-                <p className="text-muted-foreground">WebAssembly provides near-native performance on Arbitrum.</p>
+                <h3 className="font-bold mb-1">Dramatically Lower Gas Costs</h3>
+                <p className="text-muted-foreground">
+                  Efficient WebAssembly execution means significantly cheaper transactions for your users.
+                </p>
               </div>
             </div>
             <div className="flex gap-4">
@@ -159,8 +172,10 @@ pub fn main() {
                 3
               </div>
               <div>
-                <h3 className="font-bold mb-1">Dramatically Lower Gas Costs</h3>
-                <p className="text-muted-foreground">Efficient execution means cheaper transactions for your users.</p>
+                <h3 className="font-bold mb-1">Performance at Scale</h3>
+                <p className="text-muted-foreground">
+                  Build high-speed dApps for gaming, DeFi, and AI that are only possible with Stylus.
+                </p>
               </div>
             </div>
           </div>

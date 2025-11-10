@@ -42,7 +42,7 @@ export function TopNav() {
         <div className="flex items-center gap-3">
           <ThemeToggle />
           <a
-            href="https://github.com/arbitrum/stylus"
+            href="https://github.com/Team-Oracle/kairo"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-2 rounded-lg bg-primary text-primary-foreground hover:bg-primary-dark transition-colors text-sm font-medium hidden md:inline-block"

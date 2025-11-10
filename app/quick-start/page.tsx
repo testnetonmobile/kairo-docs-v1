@@ -36,7 +36,7 @@ sol_storage! {
     }
 }
 
-// 4. (Optional) Add custom functions
+// 4. (Optional) Add custom functions (e.g., mint initial supply)
 #[public]
 #[inherit(Erc20<MyTokenParams>)]
 impl MyAwesomeToken
@@ -56,8 +56,8 @@ where
   return (
     <LayoutWrapper>
       <div className="max-w-4xl mx-auto px-4 md:px-8 py-12">
-        <h1 className="text-4xl font-bold mb-2">Quick Start</h1>
-        <p className="text-muted-foreground mb-12">Build and deploy your own custom ERC20 token in minutes.</p>
+        <h1 className="text-4xl font-bold mb-2">Getting Started</h1>
+        <p className="text-muted-foreground mb-12">Build and deploy your own custom ERC20 token in minutes!</p>
 
         {/* Prerequisites */}
         <div className="mb-12">
@@ -65,30 +65,15 @@ where
           <ul className="space-y-3 text-muted-foreground">
             <li className="flex gap-3">
               <span className="text-primary font-bold">•</span>
-              <span>
-                <a href="https://www.rust-lang.org/tools/install" className="text-primary hover:underline">
-                  Rust
-                </a>
-              </span>
+              <span>Rust</span>
             </li>
             <li className="flex gap-3">
               <span className="text-primary font-bold">•</span>
-              <span>
-                <a href="https://github.com/OffchainLabs/stylus" className="text-primary hover:underline">
-                  cargo-stylus
-                </a>
-              </span>
+              <span>cargo-stylus</span>
             </li>
             <li className="flex gap-3">
               <span className="text-primary font-bold">•</span>
-              <span>
-                <a
-                  href="https://book.getfoundry.sh/getting-started/installation"
-                  className="text-primary hover:underline"
-                >
-                  foundry
-                </a>
-              </span>
+              <span>foundry</span>
             </li>
             <li className="flex gap-3">
               <span className="text-primary font-bold">•</span>
@@ -132,7 +117,8 @@ where
             <h2 className="text-2xl font-bold">Write Your Custom Token Contract</h2>
           </div>
           <p className="text-muted-foreground mb-4">
-            Open <code className="bg-muted px-2 py-1 rounded">src/lib.rs</code> and replace its contents:
+            Open <code className="bg-muted px-2 py-1 rounded">src/lib.rs</code> (or{" "}
+            <code className="bg-muted px-2 py-1 rounded">src/main.rs</code>) and replace its contents:
           </p>
           <CodeBlock code={tokenExample} language="rust" filename="src/lib.rs" />
         </div>
@@ -146,35 +132,13 @@ where
             <h2 className="text-2xl font-bold">Deploy to a Testnet</h2>
           </div>
           <p className="text-muted-foreground mb-4">
-            Use <code className="bg-muted px-2 py-1 rounded">cargo stylus</code> to deploy to Sepolia or another
-            supported testnet:
+            Use <code className="bg-muted px-2 py-1 rounded">cargo stylus</code> to deploy to Sepolia (or another
+            supported testnet):
           </p>
           <CodeBlock code={deployCommand} language="bash" />
           <p className="text-muted-foreground text-sm mt-4">
             Your custom token is now live, inheriting all of Kairo's security and functionality!
           </p>
-        </div>
-
-        {/* Next Steps */}
-        <div className="bg-card border border-border rounded-xl p-6">
-          <h3 className="font-bold mb-4">What's Next?</h3>
-          <ul className="space-y-3 text-muted-foreground">
-            <li>
-              <a href="/development" className="text-primary hover:underline font-medium">
-                Local Development & Testing →
-              </a>
-            </li>
-            <li>
-              <a href="/guides/erc20" className="text-primary hover:underline font-medium">
-                Deep Dive: ERC20 Implementation →
-              </a>
-            </li>
-            <li>
-              <a href="/resources/examples" className="text-primary hover:underline font-medium">
-                View More Examples →
-              </a>
-            </li>
-          </ul>
         </div>
       </div>
     </LayoutWrapper>

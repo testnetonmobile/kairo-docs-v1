@@ -101,18 +101,6 @@ export default function Home() {
               </div>
             </Link>
             <Link
-              href="/guides/erc20"
-              className="p-6 rounded-xl border border-border hover:border-primary transition-all hover:shadow-md group"
-            >
-              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">ERC20 Example</div>
-              <p className="text-muted-foreground text-sm mb-4">
-                Deep dive into building custom ERC20 tokens with Kairo.
-              </p>
-              <div className="text-primary font-medium flex items-center gap-2 text-sm">
-                Explore <ArrowRight size={14} />
-              </div>
-            </Link>
-            <Link
               href="/development"
               className="p-6 rounded-xl border border-border hover:border-primary transition-all hover:shadow-md group"
             >
@@ -122,20 +110,6 @@ export default function Home() {
               </p>
               <div className="text-primary font-medium flex items-center gap-2 text-sm">
                 Learn more <ArrowRight size={14} />
-              </div>
-            </Link>
-            <Link
-              href="/resources/examples"
-              className="p-6 rounded-xl border border-border hover:border-primary transition-all hover:shadow-md group"
-            >
-              <div className="font-bold text-lg mb-2 group-hover:text-primary transition-colors">
-                Examples & Recipes
-              </div>
-              <p className="text-muted-foreground text-sm mb-4">
-                Pre-built examples and common patterns for using Kairo.
-              </p>
-              <div className="text-primary font-medium flex items-center gap-2 text-sm">
-                View examples <ArrowRight size={14} />
               </div>
             </Link>
           </div>

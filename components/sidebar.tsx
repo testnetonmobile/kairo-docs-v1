@@ -21,26 +21,8 @@ const navSections: NavSection[] = [
     ],
   },
   {
-    title: "Guides",
-    items: [
-      { label: "ERC20 Tokens", href: "/guides/erc20" },
-      { label: "ERC721 NFTs", href: "/guides/erc721" },
-      { label: "Access Control", href: "/guides/access-control" },
-    ],
-  },
-  {
     title: "Development",
-    items: [
-      { label: "Local Development", href: "/development" },
-      { label: "Testing & Examples", href: "/resources/examples" },
-    ],
-  },
-  {
-    title: "Resources",
-    items: [
-      { label: "Best Practices", href: "/resources/best-practices" },
-      { label: "FAQ", href: "/resources/faq" },
-    ],
+    items: [{ label: "Local Development", href: "/development" }],
   },
 ]
 
